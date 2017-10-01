@@ -7,24 +7,29 @@
         <thead>
             <th>#</th>
             <th>Todo</th>
-            <th>Due Date</th>
             <th>Description</th>
+            <th>Category</th>
+            <th>Due Date</th>
+            <th>Priority</th>
             <th></th>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <a class="btn btn-default" href="{{ path('todo_details', { 'id': 1 }) }}"><span class="glyphicon glyphicon-search"></span></a>
-                <a class="btn btn-default" href="{{ path('todo_edit', { 'id': 1 }) }}"><span class="glyphicon glyphicon-edit"></span></a>
-                <a class="btn btn-success" href="{{ "#" }}"><span class="glyphicon glyphicon-user"></span></a>
-                <a class="btn btn-danger" href="{{ path('todo_delete', { 'id': 1 }) }}"><span class="glyphicon glyphicon-trash"></span></a>
-            </td>
-        </tr>
+            {% for todo in todos %}
+            <tr>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.name }}</td>
+                <td>{{ todo.description }}</td>
+                <td>{{ todo.category }}</td>
+                <td>{{ todo.dueDate|date('d-m-y') }}</td>
+                <td>{{ todo.priority }}</td>
+                <td>
+                    <a class="btn btn-default" href="{{ path('todo_details', { 'id': todo.id }) }}"><span class="glyphicon glyphicon-search"></span></a>
+                    <a class="btn btn-default" href="{{ path('todo_edit', { 'id': todo.id }) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a class="btn btn-success" href="{{ "#" }}"><span class="glyphicon glyphicon-user"></span></a>
+                    <a class="btn btn-danger" href="{{ path('todo_delete', { 'id': todo.id }) }}"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 {%  endblock %}

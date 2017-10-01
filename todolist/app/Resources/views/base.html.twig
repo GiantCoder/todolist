@@ -35,7 +35,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="btn btn-primary" href="{{ path("todo_create") }}">Add Todo</a></li>
+                <li><a class="btn btn-primary" href="{{ path("todo_new") }}">Add Todo</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -44,7 +44,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            {% block body %}{% endblock %}
+            {% for label, messages in app.flashes(['success', 'info','warning', 'danger']) %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            {% block body %}
+            {% endblock %}
         </div>
     </div>
 
