@@ -14,9 +14,15 @@ class TodoController extends Controller
     /**
      * @Route("/todos", name="todo_list")
      */
-    public function indexAction(Request $request)
+    public function listAction(Request $request)
     {
-        return $this->render('todo/index.html.twig');
+        $todos = $this->getDoctrine()
+            ->getRepository('AppBundle:Todo')
+            ->findAll();
+
+        return $this->render('todo/index.html.twig', [
+            'todos' => $todos
+        ]);
 
     }
 
