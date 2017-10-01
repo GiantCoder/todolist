@@ -1,0 +1,23 @@
+diff --git a/src/AppBundle/Controller/GenusController.php b/src/AppBundle/Controller/GenusController.php
+index 97acf4e..fc4d593 100644
+--- a/src/AppBundle/Controller/GenusController.php
++++ b/src/AppBundle/Controller/GenusController.php
+@@ -28,6 +28,18 @@ class GenusController extends Controller
+         return new Response('<html><body>Genus created!</body></html>');
+     }
+ 
++    /**
++     * @Route("/genus")
++     */
++    public function listAction()
++    {
++        $em = $this->getDoctrine()->getManager();
++
++        $genuses = $em->getRepository('AppBundle\Entity\Genus')
++            ->findAll();
++        dump($genuses);die;
++    }
++
+     /**
+      * @Route("/genus/{genusName}")
+      */

@@ -1,0 +1,40 @@
+diff --git a/app/Resources/views/genus/show.html.twig b/app/Resources/views/genus/show.html.twig
+index ce74d08..217353e 100644
+--- a/app/Resources/views/genus/show.html.twig
++++ b/app/Resources/views/genus/show.html.twig
+@@ -17,6 +17,21 @@
+                 <dd>{{ genus.funFact|markdownify }}</dd>
+                 <dt>Recent Notes</dt>
+                 <dd>{{ recentNoteCount }}</dd>
++
++                <dt>Lead Scientists</dt>
++                <dd>
++                    <ul class="list-group">
++                        {% for genusScientist in genus.genusScientists %}
++                            <li class="list-group-item">
++                                <a href="{{ path('user_show', {
++                                    'id': genusScientist.id
++                                }) }}">
++                                    {{ genusScientist.fullName }}
++                                </a>
++                            </li>
++                        {% endfor %}
++                    </ul>
++                </dd>
+             </dl>
+         </div>
+     </div>
+diff --git a/src/AppBundle/Entity/Genus.php b/src/AppBundle/Entity/Genus.php
+index 51e5689..615c81b 100644
+--- a/src/AppBundle/Entity/Genus.php
++++ b/src/AppBundle/Entity/Genus.php
+@@ -180,4 +180,9 @@ class Genus
+ 
+         $this->genusScientists[] = $user;
+     }
++
++    public function getGenusScientists()
++    {
++        return $this->genusScientists;
++    }
+ }

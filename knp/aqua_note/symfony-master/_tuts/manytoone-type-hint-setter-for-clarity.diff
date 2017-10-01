@@ -1,0 +1,13 @@
+diff --git a/src/AppBundle/Entity/GenusNote.php b/src/AppBundle/Entity/GenusNote.php
+index 7dd0505..69dffbf 100644
+--- a/src/AppBundle/Entity/GenusNote.php
++++ b/src/AppBundle/Entity/GenusNote.php
+@@ -92,7 +92,7 @@ class GenusNote
+         return $this->genus;
+     }
+ 
+-    public function setGenus($genus)
++    public function setGenus(Genus $genus)
+     {
+         $this->genus = $genus;
+     }

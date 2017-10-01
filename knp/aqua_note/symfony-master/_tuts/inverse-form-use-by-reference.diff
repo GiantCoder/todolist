@@ -1,0 +1,35 @@
+diff --git a/src/AppBundle/Entity/User.php b/src/AppBundle/Entity/User.php
+index 6547e5f..f45c1af 100644
+--- a/src/AppBundle/Entity/User.php
++++ b/src/AppBundle/Entity/User.php
+@@ -220,4 +220,18 @@ class User implements UserInterface
+     {
+         return $this->studiedGenuses;
+     }
++
++    public function addStudiedGenus(Genus $genus)
++    {
++        if ($this->studiedGenuses->contains($genus)) {
++            return;
++        }
++
++        $this->studiedGenuses[] = $genus;
++    }
++
++    public function removeStudiedGenus(Genus $genus)
++    {
++        $this->studiedGenuses->removeElement($genus);
++    }
+ }
+diff --git a/src/AppBundle/Form/UserEditForm.php b/src/AppBundle/Form/UserEditForm.php
+index b40216e..b8f01eb 100644
+--- a/src/AppBundle/Form/UserEditForm.php
++++ b/src/AppBundle/Form/UserEditForm.php
+@@ -27,6 +27,7 @@ class UserEditForm extends AbstractType
+                 'multiple' => true,
+                 'expanded' => true,
+                 'choice_label' => 'name',
++                'by_reference' => false,
+             ])
+         ;
+     }

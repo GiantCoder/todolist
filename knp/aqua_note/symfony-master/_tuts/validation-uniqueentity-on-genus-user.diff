@@ -1,0 +1,21 @@
+diff --git a/src/AppBundle/Entity/GenusScientist.php b/src/AppBundle/Entity/GenusScientist.php
+index 5982b39..7214b0d 100644
+--- a/src/AppBundle/Entity/GenusScientist.php
++++ b/src/AppBundle/Entity/GenusScientist.php
+@@ -3,11 +3,16 @@
+ namespace AppBundle\Entity;
+ 
+ use Doctrine\ORM\Mapping as ORM;
++use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+ use Symfony\Component\Validator\Constraints as Assert;
+ 
+ /**
+  * @ORM\Entity
+  * @ORM\Table(name="genus_scientist")
++ * @UniqueEntity(
++ *     fields={"genus", "user"},
++ *     message="This user is already studying this genus"
++ * )
+  */
+ class GenusScientist
+ {

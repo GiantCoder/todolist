@@ -1,0 +1,92 @@
+title: 'Doctrine Collections: ManyToMany, Forms & other Complex Relations'
+
+summary: |
+    With the [basic of Doctrine relations](http://knpuniversity.com/screencast/doctrine-relations)
+    behind us, it's time to dive deeper and get our hands dirty with some real-world,
+    but complex collections. Honestly, this is the *hardest* part of Doctrine: so
+    let's get it *right*:
+
+    * Creating ManyToMany associations
+    * Querying on ManyToMany relations
+    * Mapping the inverse (collection) side of a relation
+    * (bonus) Using DoctrineExtension for clean URL slugs
+    * Keeping the owning & inverse sides in-sync
+    * Using `orphanRemoval` to delete items in a collection
+    * Using `cascade` to save items in a collection
+    * Counting collections in the `EXTRA_LAZY` way
+    * Rendering relationship data from both sides
+    * Filtering collections efficiently with Criteria (mind will be blown)
+    * Dealing with complex collection forms
+    * Adding "extra" data to the "join table"
+
+    Doctrine relationships take a little bit more work to get setup. So let's
+    master this stuff, setup our relationships to win, and get back to work.
+
+illustration: symfony-collections.png
+
+tuts_hero:
+    start_step: 'Collection Updates: Redirect to edit on save'
+    finish_step: 'Criteria: Use in query builder'
+
+chapters:
+    clean-url-slugs:
+        is_free: true
+        video_key: 190653124
+    doctrine-extensions-sluggable:
+        is_free: true
+        video_key: 190642243
+    refactoring-carefully:
+        is_free: true
+        video_key: 190641813
+    many-to-many-setup:
+        is_free: true
+        video_key: 190648181
+    insert-many-to-many:
+        is_free: true
+        video_key: 190653483
+    fetch-collection-items:
+        video_key: 191026902
+    many-to-many-inverse:
+        video_key: 191027242
+    removing-items:
+        video_key: 191024506
+    hooking-up-remove-scientist-js:
+        video_key: 191023698
+    many-to-many-fixtures:
+        video_key: 191024079
+    joins-and-extra-lazy-fetch:
+        video_key: 191867812
+    entity-type-checkboxes:
+        video_key: 191867854
+    saving-inverse-side-collection:
+        video_key: 191867270
+    by-reference-adder-remover:
+        video_key: 192800331
+    synchronizing-mapping-inverse:
+        video_key: 192800586
+    many-to-many-extra-fields:
+        video_key: 192803108
+    join-entity-refactoring:
+        video_key: 192801278
+    refactoring-for-new-collections:
+        video_key: 192803522
+    embedded-form-collection:
+        video_key: 192804134
+    collection-allow-delete:
+        video_key: 193476336
+    collection-delete-orphan-removal:
+        video_key: 193476070
+    add-new-collection-prototype:
+        video_key: 193476808
+    add-new-collection-cascade-persist:
+        video_key: 193475426
+    embedded-validation:
+        video_key: 193886082
+    customizing-prototype:
+        video_key: 193886759
+    form-events-readonly-embedded-field:
+        video_key: 193891390
+    easy-collection-filtering:
+        video_key: 193892395
+    criteria-collection-filtering:
+        video_key: 193892988

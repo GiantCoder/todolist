@@ -1,0 +1,166 @@
+diff --git a/app/Resources/views/user/edit.html.twig b/app/Resources/views/user/edit.html.twig
+new file mode 100644
+index 0000000..5b39c82
+--- /dev/null
++++ b/app/Resources/views/user/edit.html.twig
+@@ -0,0 +1,23 @@
++{% extends 'base.html.twig' %}
++
++{% block body %}
++    <div class="container">
++        <div class="row">
++            <div class="col-xs-8">
++                <h1>Update User</h1>
++
++                {{ form_start(userForm) }}
++                    {{ form_errors(userForm) }}
++
++                    {{ form_row(userForm.email) }}
++                    {{ form_row(userForm.isScientist) }}
++                    {{ form_row(userForm.firstName) }}
++                    {{ form_row(userForm.lastName) }}
++                    {{ form_row(userForm.universityName) }}
++
++                    <button type="submit" class="btn btn-primary">Update</button>
++                {{ form_end(userForm) }}
++            </div>
++        </div>
++    </div>
++{% endblock %}
+diff --git a/app/Resources/views/user/show.html.twig b/app/Resources/views/user/show.html.twig
+new file mode 100644
+index 0000000..5a0984f
+--- /dev/null
++++ b/app/Resources/views/user/show.html.twig
+@@ -0,0 +1,40 @@
++{% extends 'base.html.twig' %}
++
++{% block body %}
++    <div class="container">
++        <div class="row">
++            <div class="col-xs-8">
++                <h1>
++                    {% if user.fullName %}
++                        {{ user.fullName }}
++                    {% else %}
++                        {{ user.email }}
++                    {% endif %}
++
++                    <a href="{{ path('user_edit', {
++                        id: user.id
++                    }) }}" class="pull-right btn btn-link">
++                        <span class="fa fa-pencil"></span>
++                    </a>
++                </h1>
++
++                <table class="table">
++                    <tbody>
++                    <tr>
++                        <th>Name</th>
++                        <td>{{ user.fullName|default('-') }}</td>
++                    </tr>
++                    <tr>
++                        <th>Email</th>
++                        <td>{{ user.email }}</td>
++                    </tr>
++                    <tr>
++                        <th>University</th>
++                        <td>{{ user.universityName|default('-') }}</td>
++                    </tr>
++                    </tbody>
++                </table>
++            </div>
++        </div>
++    </div>
++{% endblock %}
+diff --git a/src/AppBundle/Controller/UserController.php b/src/AppBundle/Controller/UserController.php
+index 7b8a18c..da61629 100644
+--- a/src/AppBundle/Controller/UserController.php
++++ b/src/AppBundle/Controller/UserController.php
+@@ -3,6 +3,7 @@
+ namespace AppBundle\Controller;
+ 
+ use AppBundle\Entity\User;
++use AppBundle\Form\UserEditForm;
+ use AppBundle\Form\UserRegistrationForm;
+ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+@@ -40,4 +41,40 @@ class UserController extends Controller
+             'form' => $form->createView()
+         ]);
+     }
++
++    /**
++     * @Route("/users/{id}", name="user_show")
++     */
++    public function showAction(User $user)
++    {
++        return $this->render('user/show.html.twig', array(
++            'user' => $user
++        ));
++    }
++
++    /**
++     * @Route("/users/{id}/edit", name="user_edit")
++     */
++    public function editAction(User $user, Request $request)
++    {
++        $form = $this->createForm(UserEditForm::class, $user);
++
++        $form->handleRequest($request);
++        if ($form->isValid()) {
++            $em = $this->getDoctrine()->getManager();
++            $em->persist($user);
++            $em->flush();
++
++            $this->addFlash('success', 'User Updated!');
++
++            return $this->redirectToRoute('user_edit', [
++                'id' => $user->getId()
++            ]);
++        }
++
++        return $this->render('user/edit.html.twig', [
++            'userForm' => $form->createView()
++        ]);
++
++    }
+ }
+diff --git a/src/AppBundle/Form/UserEditForm.php b/src/AppBundle/Form/UserEditForm.php
+new file mode 100644
+index 0000000..6c9c0bb
+--- /dev/null
++++ b/src/AppBundle/Form/UserEditForm.php
+@@ -0,0 +1,32 @@
++<?php
++
++namespace AppBundle\Form;
++
++use AppBundle\Entity\User;
++use Symfony\Component\Form\AbstractType;
++use Symfony\Component\Form\Extension\Core\Type\EmailType;
++use Symfony\Component\Form\Extension\Core\Type\PasswordType;
++use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
++use Symfony\Component\Form\FormBuilderInterface;
++use Symfony\Component\OptionsResolver\OptionsResolver;
++
++class UserEditForm extends AbstractType
++{
++    public function buildForm(FormBuilderInterface $builder, array $options)
++    {
++        $builder
++            ->add('email', EmailType::class)
++            ->add('isScientist')
++            ->add('firstName')
++            ->add('lastName')
++            ->add('universityName')
++        ;
++    }
++
++    public function configureOptions(OptionsResolver $resolver)
++    {
++        $resolver->setDefaults([
++            'data_class' => User::class,
++        ]);
++    }
++}

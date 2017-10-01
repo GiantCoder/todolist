@@ -1,0 +1,83 @@
+diff --git a/app/Resources/views/base.html.twig b/app/Resources/views/base.html.twig
+index a25efce..865e2f3 100644
+--- a/app/Resources/views/base.html.twig
++++ b/app/Resources/views/base.html.twig
+@@ -36,6 +36,11 @@
+                     {{ msg }}
+                 </div>
+             {% endfor %}
++            {% for msg in app.session.flashBag.get('error') %}
++                <div class="alert alert-danger">
++                    {{ msg }}
++                </div>
++            {% endfor %}
+ 
+             {% block body %}{% endblock %}
+         </div>
+diff --git a/app/config/services.yml b/app/config/services.yml
+index d2f27ed..853a8bb 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -30,3 +30,13 @@ services:
+         autowire: true
+         tags:
+             - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FormType }
++
++    app.encouraging_message_generator:
++        class: AppBundle\Service\MessageGenerator
++        arguments:
++            - ['You can do it!', 'Dude, sweet!', 'Woot!']
++
++    app.discouraging_message_generator:
++        class: AppBundle\Service\MessageGenerator
++        arguments:
++            - ['We are *never* going to figure this out', 'Why even try again?', 'Facepalm']
+diff --git a/src/AppBundle/Controller/Admin/GenusAdminController.php b/src/AppBundle/Controller/Admin/GenusAdminController.php
+index ac92b2a..180567a 100644
+--- a/src/AppBundle/Controller/Admin/GenusAdminController.php
++++ b/src/AppBundle/Controller/Admin/GenusAdminController.php
+@@ -74,11 +74,19 @@ class GenusAdminController extends Controller
+             $em->persist($genus);
+             $em->flush();
+ 
+-            $this->addFlash('success', 'Genus updated!');
++            $this->addFlash(
++                'success',
++                $this->get('app.encouraging_message_generator')->getMessage()
++            );
+ 
+             return $this->redirectToRoute('admin_genus_edit', [
+                 'id' => $genus->getId()
+             ]);
++        }  elseif ($form->isSubmitted()) {
++            $this->addFlash(
++                'error',
++                $this->get('app.discouraging_message_generator')->getMessage()
++            );
+         }
+ 
+         return $this->render('admin/genus/edit.html.twig', [
+diff --git a/src/AppBundle/Service/MessageGenerator.php b/src/AppBundle/Service/MessageGenerator.php
+new file mode 100644
+index 0000000..4fa27c5
+--- /dev/null
++++ b/src/AppBundle/Service/MessageGenerator.php
+@@ -0,0 +1,18 @@
++<?php
++
++namespace AppBundle\Service;
++
++class MessageGenerator
++{
++    private $messages;
++
++    public function __construct(array $messages)
++    {
++        $this->messages = $messages;
++    }
++
++    public function getMessage()
++    {
++        return $this->messages[array_rand($this->messages)];
++    }
++}

@@ -1,0 +1,95 @@
+diff --git a/app/Resources/views/genus/show.html.twig b/app/Resources/views/genus/show.html.twig
+index 6cdcbfd..0055569 100644
+--- a/app/Resources/views/genus/show.html.twig
++++ b/app/Resources/views/genus/show.html.twig
+@@ -22,7 +22,7 @@
+                 <dd>
+                     <ul class="list-group">
+                         {% for genusScientist in genus.genusScientists %}
+-                            <li class="list-group-item">
++                            <li class="list-group-item js-scientist-item">
+                                 <a href="{{ path('user_show', {
+                                     'id': genusScientist.id
+                                 }) }}">
+@@ -31,6 +31,10 @@
+ 
+                                 <a href="#"
+                                    class="btn btn-link btn-xs pull-right js-remove-scientist-user"
++                                   data-url="{{ path('genus_scientists_remove', {
++                                       genusId: genus.id,
++                                       userId: genusScientist.id
++                                   }) }}"
+                                 >
+                                     <span class="fa fa-close"></span>
+                                 </a>
+@@ -64,6 +68,22 @@
+         jQuery(document).ready(function() {
+             $('.js-remove-scientist-user').on('click', function(e) {
+                 e.preventDefault();
++
++                var $el = $(this).closest('.js-scientist-item');
++
++                $(this).find('.fa-close')
++                    .removeClass('fa-close')
++                    .addClass('fa-spinner')
++                    .addClass('fa-spin');
++
++                $.ajax({
++                    url: $(this).data('url'),
++                    method: 'DELETE'
++                }).done(function() {
++                    $el.fadeOut();
++                });
++
++                e.preventDefault();
+             });
+         });
+     </script>
+diff --git a/src/AppBundle/Controller/GenusController.php b/src/AppBundle/Controller/GenusController.php
+index 22eb8e9..fe1ca68 100644
+--- a/src/AppBundle/Controller/GenusController.php
++++ b/src/AppBundle/Controller/GenusController.php
+@@ -121,5 +121,27 @@ class GenusController extends Controller
+      */
+     public function removeGenusScientistAction($genusId, $userId)
+     {
++        $em = $this->getDoctrine()->getManager();
++
++        /** @var Genus $genus */
++        $genus = $em->getRepository('AppBundle:Genus')
++            ->find($genusId);
++
++        if (!$genus) {
++            throw $this->createNotFoundException('genus not found');
++        }
++
++        $genusScientist = $em->getRepository('AppBundle:User')
++            ->find($userId);
++
++        if (!$genusScientist) {
++            throw $this->createNotFoundException('scientist not found');
++        }
++
++        $genus->removeGenusScientist($genusScientist);
++        $em->persist($genus);
++        $em->flush();
++
++        return new Response(null, 204);
+     }
+ }
+diff --git a/src/AppBundle/Entity/Genus.php b/src/AppBundle/Entity/Genus.php
+index 4155d05..746fc45 100644
+--- a/src/AppBundle/Entity/Genus.php
++++ b/src/AppBundle/Entity/Genus.php
+@@ -181,6 +181,11 @@ class Genus
+         $this->genusScientists[] = $user;
+     }
+ 
++    public function removeGenusScientist(User $user)
++    {
++        $this->genusScientists->removeElement($user);
++    }
++
+     /**
+      * @return ArrayCollection|User[]
+      */

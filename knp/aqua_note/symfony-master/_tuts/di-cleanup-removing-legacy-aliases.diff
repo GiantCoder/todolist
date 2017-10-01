@@ -1,0 +1,103 @@
+diff --git a/app/config/legacy_aliases.yml b/app/config/legacy_aliases.yml
+deleted file mode 100644
+index f050f52..0000000
+--- a/app/config/legacy_aliases.yml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-services:
+-    app.markdown_extension: '@AppBundle\Twig\MarkdownExtension'
+-    app.security.login_form_authenticator: '@AppBundle\Security\LoginFormAuthenticator'
+-    app.doctrine.hash_password_listener: '@AppBundle\Doctrine\HashPasswordListener'
+-    app.form.help_form_extenion: '@AppBundle\Form\TypeExtension\HelpFormExtension'
+diff --git a/app/config/security.yml b/app/config/security.yml
+index b03a7bd..011f26f 100644
+--- a/app/config/security.yml
++++ b/app/config/security.yml
+@@ -22,7 +22,7 @@ security:
+             anonymous: ~
+             guard:
+                 authenticators:
+-                    - app.security.login_form_authenticator
++                    - AppBundle\Security\LoginFormAuthenticator
+ 
+             logout:
+                 path: /logout
+diff --git a/app/config/services.yml b/app/config/services.yml
+index 679e29d..32444e6 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -1,8 +1,5 @@
+ # Learn more about services, parameters and containers at
+ # http://symfony.com/doc/current/book/service_container.html
+-imports:
+-    - { resource: legacy_aliases.yml }
+-
+ parameters:
+ #    parameter_name: value
+ 
+@@ -42,4 +39,3 @@ services:
+         arguments:
+             - ['You can do it!', 'Dude, sweet!', 'Woot!']
+             - ['We are *never* going to figure this out', 'Why even try again?', 'Facepalm']
+-        public: true
+diff --git a/src/AppBundle/Controller/Admin/GenusAdminController.php b/src/AppBundle/Controller/Admin/GenusAdminController.php
+index 0109ae5..5a1aa9f 100644
+--- a/src/AppBundle/Controller/Admin/GenusAdminController.php
++++ b/src/AppBundle/Controller/Admin/GenusAdminController.php
+@@ -62,7 +62,7 @@ class GenusAdminController extends Controller
+     /**
+      * @Route("/genus/{id}/edit", name="admin_genus_edit")
+      */
+-    public function editAction(Request $request, Genus $genus)
++    public function editAction(Request $request, Genus $genus, MessageManager $messageManager)
+     {
+         $form = $this->createForm(GenusFormType::class, $genus);
+ 
+@@ -77,7 +77,7 @@ class GenusAdminController extends Controller
+ 
+             $this->addFlash(
+                 'success',
+-                $this->get(MessageManager::class)->getEncouragingMessage()
++                $messageManager->getEncouragingMessage()
+             );
+ 
+             return $this->redirectToRoute('admin_genus_edit', [
+@@ -86,7 +86,7 @@ class GenusAdminController extends Controller
+         }  elseif ($form->isSubmitted()) {
+             $this->addFlash(
+                 'error',
+-                $this->get(MessageManager::class)->getDiscouragingMessage()
++                $messageManager->getDiscouragingMessage()
+             );
+         }
+ 
+diff --git a/src/AppBundle/Controller/UserController.php b/src/AppBundle/Controller/UserController.php
+index da61629..33758c9 100644
+--- a/src/AppBundle/Controller/UserController.php
++++ b/src/AppBundle/Controller/UserController.php
+@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
+ use AppBundle\Entity\User;
+ use AppBundle\Form\UserEditForm;
+ use AppBundle\Form\UserRegistrationForm;
++use AppBundle\Security\LoginFormAuthenticator;
+ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+ use Symfony\Component\HttpFoundation\Request;
+@@ -14,7 +15,7 @@ class UserController extends Controller
+     /**
+      * @Route("/register", name="user_register")
+      */
+-    public function registerAction(Request $request)
++    public function registerAction(Request $request, LoginFormAuthenticator $authenticator)
+     {
+         $form = $this->createForm(UserRegistrationForm::class);
+ 
+@@ -32,7 +33,7 @@ class UserController extends Controller
+                 ->authenticateUserAndHandleSuccess(
+                     $user,
+                     $request,
+-                    $this->get('app.security.login_form_authenticator'),
++                    $authenticator,
+                     'main'
+                 );
+         }

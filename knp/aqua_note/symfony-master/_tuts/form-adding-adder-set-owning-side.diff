@@ -1,0 +1,13 @@
+diff --git a/src/AppBundle/Entity/Genus.php b/src/AppBundle/Entity/Genus.php
+index 19f74ee..70285fc 100644
+--- a/src/AppBundle/Entity/Genus.php
++++ b/src/AppBundle/Entity/Genus.php
+@@ -184,6 +184,8 @@ class Genus
+         }
+ 
+         $this->genusScientists[] = $genusScientist;
++        // needed to update the owning side of the relationship!
++        $genusScientist->setGenus($this);
+     }
+ 
+     public function removeGenusScientist(GenusScientist $genusScientist)

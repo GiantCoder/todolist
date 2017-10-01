@@ -1,0 +1,1435 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "setup-new-project",
+            "name": "Setup: New project",
+            "description": null
+        },
+        {
+            "id": "setup-remove-controller",
+            "name": "Setup: Remove controller",
+            "description": null
+        },
+        {
+            "id": "route-first-route-controller",
+            "name": "Route: First route\/controller",
+            "description": null
+        },
+        {
+            "id": "route-add-wildcard",
+            "name": "Route: Add wildcard",
+            "description": null
+        },
+        {
+            "id": "route-misname-wildcard",
+            "name": "Route: Misname wildcard",
+            "description": null
+        },
+        {
+            "id": "route-fix-wildcard-name",
+            "name": "Route: Fix wildcard name",
+            "description": null
+        },
+        {
+            "id": "templating-render-basic-template",
+            "name": "Templating: Render basic template",
+            "description": null
+        },
+        {
+            "id": "templating-render-short-way",
+            "name": "Templating: Render short way",
+            "description": null
+        },
+        {
+            "id": "twig-use-dump",
+            "name": "Twig: Use dump()",
+            "description": null
+        },
+        {
+            "id": "twig-do-something-loop",
+            "name": "Twig: Do something loop",
+            "description": null
+        },
+        {
+            "id": "twig-extend-without-block",
+            "name": "Twig: Extend without block",
+            "description": null
+        },
+        {
+            "id": "twig-use-block-body",
+            "name": "Twig: Use block body",
+            "description": null
+        },
+        {
+            "id": "twig-override-title-block",
+            "name": "Twig: Override title block",
+            "description": null
+        },
+        {
+            "id": "layout-include-our-layout",
+            "name": "Layout: Include our layout",
+            "description": null
+        },
+        {
+            "id": "json-new-simple-json-endpoint",
+            "name": "JSON: New simple JSON endpoint",
+            "description": null
+        },
+        {
+            "id": "json-use-jsonresponse",
+            "name": "JSON: Use JsonResponse",
+            "description": null
+        },
+        {
+            "id": "json-link-to-page",
+            "name": "JSON: Link to page",
+            "description": null
+        },
+        {
+            "id": "json-finish-ajax-call",
+            "name": "JSON: Finish AJAX call",
+            "description": null
+        },
+        {
+            "id": "json-pass-in-dynamic-uri",
+            "name": "JSON: Pass in dynamic URI",
+            "description": null
+        },
+        {
+            "id": "bundle-install-knpmarkdownbundle",
+            "name": "Bundle: Install KnpMarkdownBundle",
+            "description": null
+        },
+        {
+            "id": "bundle-render-funfact-dynamically",
+            "name": "Bundle: Render funFact dynamically",
+            "description": null
+        },
+        {
+            "id": "bundle-use-markdown-parser-service",
+            "name": "Bundle: Use markdown.parser service",
+            "description": null
+        },
+        {
+            "id": "bundle-use-this-get-in-controller",
+            "name": "Bundle: Use $this->get() in controller",
+            "description": null
+        },
+        {
+            "id": "config-use-twig-config",
+            "name": "Config: Use twig config",
+            "description": null
+        },
+        {
+            "id": "config-use-doctrinecachebundle",
+            "name": "Config: Use DoctrineCacheBundle",
+            "description": null
+        },
+        {
+            "id": "config-cache-cache-dir-incorrectly",
+            "name": "Config: Cache cache dir incorrectly",
+            "description": null
+        },
+        {
+            "id": "config-cache-dir-correctly",
+            "name": "Config: Cache dir correctly",
+            "description": null
+        },
+        {
+            "id": "environment-firephp-in-dev",
+            "name": "Environment: Firephp in dev",
+            "description": null
+        },
+        {
+            "id": "environment-no-caching-in-dev",
+            "name": "Environment: no caching in dev",
+            "description": null
+        },
+        {
+            "id": "environment-make-number-format-comma",
+            "name": "Environment: make number_format comma",
+            "description": null
+        },
+        {
+            "id": "parameters-define-cache-type",
+            "name": "Parameters: Define cache_type",
+            "description": null
+        },
+        {
+            "id": "parameters-override-in-config-dev-yml",
+            "name": "Parameters: Override in config_dev.yml",
+            "description": null
+        },
+        {
+            "id": "parameters-use-built-in",
+            "name": "Parameters: use built-in",
+            "description": null
+        },
+        {
+            "id": "parameters-remove-swiftmailer-parameters-yml",
+            "name": "Parameters: Remove swiftmailer parameters.yml",
+            "description": null
+        },
+        {
+            "id": "routing-add-yaml-route",
+            "name": "Routing: Add YAML route",
+            "description": null
+        },
+        {
+            "id": "entity-create-blank-genus",
+            "name": "Entity: Create blank Genus",
+            "description": null
+        },
+        {
+            "id": "entity-add-class-annotation",
+            "name": "Entity: Add class annotation",
+            "description": null
+        },
+        {
+            "id": "entity-add-2-properties",
+            "name": "Entity: Add 2 properties",
+            "description": null
+        },
+        {
+            "id": "save-genus-start-controller-code",
+            "name": "Save Genus: Start controller code",
+            "description": null
+        },
+        {
+            "id": "save-genus-add-setter-persist",
+            "name": "Save Genus: Add setter + persist",
+            "description": null
+        },
+        {
+            "id": "save-genus-add-body-to-see-profiler",
+            "name": "Save Genus: Add body to see profiler",
+            "description": null
+        },
+        {
+            "id": "migrations-install-bundle",
+            "name": "Migrations: Install bundle",
+            "description": null
+        },
+        {
+            "id": "migrations-add-fields-make-migration",
+            "name": "Migrations: Add fields, make migration",
+            "description": null
+        },
+        {
+            "id": "migrations-set-all-fields-but-funfact",
+            "name": "Migrations: Set all fields but funFact",
+            "description": null
+        },
+        {
+            "id": "migrations-set-nullable-make-migration",
+            "name": "Migrations: set nullable, make migration",
+            "description": null
+        },
+        {
+            "id": "query-basic-listaction",
+            "name": "Query: Basic listAction",
+            "description": null
+        },
+        {
+            "id": "query-use-entity-shortcut-alias",
+            "name": "Query: use entity shortcut alias",
+            "description": null
+        },
+        {
+            "id": "twig-entity-render-template-dump",
+            "name": "Twig entity: render template, dump",
+            "description": null
+        },
+        {
+            "id": "twig-entity-render-properties",
+            "name": "Twig entity: render properties",
+            "description": null
+        },
+        {
+            "id": "twig-entity-use-updatedat",
+            "name": "Twig entity: use updatedAt",
+            "description": null
+        },
+        {
+            "id": "link-add-route-name-and-link",
+            "name": "Link: Add route name and link",
+            "description": null
+        },
+        {
+            "id": "show-query-in-show-action-render",
+            "name": "Show: query in show action, render",
+            "description": null
+        },
+        {
+            "id": "show-404-on-bad-genus",
+            "name": "Show: 404 on bad genus",
+            "description": null
+        },
+        {
+            "id": "fixtures-install-alice-doctrinefixturesbundle",
+            "name": "Fixtures: Install alice+DoctrineFixturesBundle",
+            "description": null
+        },
+        {
+            "id": "fixtures-empty-fixture-class",
+            "name": "Fixtures: Empty fixture class",
+            "description": null
+        },
+        {
+            "id": "fixtures-adding-alice-yml-file",
+            "name": "Fixtures: Adding Alice yml file",
+            "description": null
+        },
+        {
+            "id": "fixtures-custom-genus-function",
+            "name": "Fixtures: Custom genus function",
+            "description": null
+        },
+        {
+            "id": "fixtures-add-ispublished-bool",
+            "name": "Fixtures: Add isPublished bool",
+            "description": null
+        },
+        {
+            "id": "repository-dump-repo-object",
+            "name": "Repository: Dump repo object",
+            "description": null
+        },
+        {
+            "id": "repository-create-empty-configure",
+            "name": "Repository: Create empty + configure",
+            "description": null
+        },
+        {
+            "id": "repository-basic-qb-method",
+            "name": "Repository: Basic QB method",
+            "description": null
+        },
+        {
+            "id": "manytoone-genusnote-entity",
+            "name": "ManyToOne: GenusNote entity",
+            "description": null
+        },
+        {
+            "id": "manytoone-genusnote-fixtures",
+            "name": "ManyToOne: GenusNote fixtures",
+            "description": null
+        },
+        {
+            "id": "manytoone-setup-genusnote-genus-property",
+            "name": "ManyToOne: Setup GenusNote.genus property",
+            "description": null
+        },
+        {
+            "id": "manytoone-type-hint-setter-for-clarity",
+            "name": "ManyToOne: Type-hint setter for clarity",
+            "description": null
+        },
+        {
+            "id": "manytoone-generate-migration",
+            "name": "ManyToOne: Generate migration",
+            "description": null
+        },
+        {
+            "id": "manytoone-manually-setting-in-newaction",
+            "name": "ManyToOne: Manually setting in newAction",
+            "description": null
+        },
+        {
+            "id": "manytoone-adding-nullable-false",
+            "name": "ManyToOne: Adding nullable=false",
+            "description": null
+        },
+        {
+            "id": "manytoone-fixtures-with-reference",
+            "name": "ManyToOne: Fixtures with reference",
+            "description": null
+        },
+        {
+            "id": "paramconverter-change-to-name-dump",
+            "name": "ParamConverter: Change to name, dump",
+            "description": null
+        },
+        {
+            "id": "onetomany-basic-mapping",
+            "name": "OneToMany: Basic mapping",
+            "description": null
+        },
+        {
+            "id": "onetomany-looping-over-relation",
+            "name": "OneToMany: Looping over relation",
+            "description": null
+        },
+        {
+            "id": "onetomany-begin-to-build-notes-array",
+            "name": "OneToMany: Begin to build notes array",
+            "description": null
+        },
+        {
+            "id": "onetomany-phpdoc-finish-endpoint",
+            "name": "OneToMany: phpdoc + finish endpoint",
+            "description": null
+        },
+        {
+            "id": "onetomany-order-by-on-relation",
+            "name": "OneToMany: Order by on relation",
+            "description": null
+        },
+        {
+            "id": "join-lazy-filter-for-recent-notes",
+            "name": "Join: Lazy filter for recent notes",
+            "description": null
+        },
+        {
+            "id": "join-genusrepository-simple-query",
+            "name": "Join: GenusRepository simple query",
+            "description": null
+        },
+        {
+            "id": "join-finish-query-on-relation",
+            "name": "Join: Finish query on relation",
+            "description": null
+        },
+        {
+            "id": "join-join-query-to-order-by-relation",
+            "name": "Join: Join query to order by relation",
+            "description": null
+        },
+        {
+            "id": "service-create-markdown-object",
+            "name": "Service: Create Markdown object",
+            "description": null
+        },
+        {
+            "id": "service-incorrectly-fetch-service",
+            "name": "Service: Incorrectly fetch service",
+            "description": null
+        },
+        {
+            "id": "service-manual-di",
+            "name": "Service: Manual DI",
+            "description": null
+        },
+        {
+            "id": "service-add-type-hint",
+            "name": "Service: Add type-hint",
+            "description": null
+        },
+        {
+            "id": "service-register-service",
+            "name": "Service: Register service",
+            "description": null
+        },
+        {
+            "id": "cache-start-caching-code",
+            "name": "Cache: Start caching code",
+            "description": null
+        },
+        {
+            "id": "cache-using-di",
+            "name": "Cache: Using DI",
+            "description": null
+        },
+        {
+            "id": "twigextension-use-existing-markdown-filter",
+            "name": "TwigExtension: Use existing markdown filter",
+            "description": null
+        },
+        {
+            "id": "twigextension-create-basic-class",
+            "name": "TwigExtension: Create basic class",
+            "description": null
+        },
+        {
+            "id": "twigextension-register-as-service",
+            "name": "TwigExtension: Register as service",
+            "description": null
+        },
+        {
+            "id": "twigextension-use-di",
+            "name": "TwigExtension: Use DI",
+            "description": null
+        },
+        {
+            "id": "twigextension-autowire",
+            "name": "TwigExtension: Autowire",
+            "description": null
+        },
+        {
+            "id": "twigextension-mark-as-safe",
+            "name": "TwigExtension: Mark as safe",
+            "description": null
+        },
+        {
+            "id": "updates-add-subfamily",
+            "name": "Updates: Add SubFamily",
+            "description": null
+        },
+        {
+            "id": "updates-adding-genus-firstdiscoveredat",
+            "name": "Updates: Adding Genus.firstDiscoveredAt",
+            "description": null
+        },
+        {
+            "id": "updates-starting-admin-section",
+            "name": "Updates: Starting admin section",
+            "description": null
+        },
+        {
+            "id": "build-form-create-empty-genusformtype",
+            "name": "Build Form: Create empty GenusFormType",
+            "description": null
+        },
+        {
+            "id": "build-form-basic-fields-and-rendering",
+            "name": "Build Form: Basic fields and rendering",
+            "description": null
+        },
+        {
+            "id": "build-form-bootstrap-theme",
+            "name": "Build Form: Bootstrap theme",
+            "description": null
+        },
+        {
+            "id": "build-form-very-basic-processing",
+            "name": "Build Form: Very basic processing",
+            "description": null
+        },
+        {
+            "id": "genus-form-add-data-class",
+            "name": "Genus Form: Add data_class",
+            "description": null
+        },
+        {
+            "id": "genus-form-add-other-fields",
+            "name": "Genus Form: Add other fields",
+            "description": null
+        },
+        {
+            "id": "genus-form-add-genus-getispublished",
+            "name": "Genus Form: Add Genus.getIsPublished",
+            "description": null
+        },
+        {
+            "id": "genus-form-save-and-redirect",
+            "name": "Genus Form: Save and redirect",
+            "description": null
+        },
+        {
+            "id": "flash-set-and-render-a-flash",
+            "name": "Flash: Set and render a flash",
+            "description": null
+        },
+        {
+            "id": "customize-use-choicetype",
+            "name": "Customize: Use ChoiceType",
+            "description": null
+        },
+        {
+            "id": "customize-add-placeholder-option",
+            "name": "Customize: Add placeholder option",
+            "description": null
+        },
+        {
+            "id": "customize-start-query-builder-option",
+            "name": "Customize: Start query_builder option",
+            "description": null
+        },
+        {
+            "id": "customize-finish-query-builder-option",
+            "name": "Customize: Finish query_builder option",
+            "description": null
+        },
+        {
+            "id": "customize-datetype-single-text-widget",
+            "name": "Customize: DateType single_text widget",
+            "description": null
+        },
+        {
+            "id": "customize-use-bootstrap-datepicker",
+            "name": "Customize: Use Bootstrap datepicker",
+            "description": null
+        },
+        {
+            "id": "customize-change-js-date-format-option",
+            "name": "Customize: change JS date format option",
+            "description": null
+        },
+        {
+            "id": "render-use-form-row",
+            "name": "Render: Use form_row",
+            "description": null
+        },
+        {
+            "id": "render-pass-label-var",
+            "name": "Render: Pass label var",
+            "description": null
+        },
+        {
+            "id": "validation-remove-html5-validation",
+            "name": "Validation: Remove HTML5 validation",
+            "description": null
+        },
+        {
+            "id": "validation-basic-real-validation",
+            "name": "Validation: Basic real validation",
+            "description": null
+        },
+        {
+            "id": "validation-add-more-validation",
+            "name": "Validation: Add more validation",
+            "description": null
+        },
+        {
+            "id": "validation-use-translator",
+            "name": "Validation: Use translator",
+            "description": null
+        },
+        {
+            "id": "edit-setup-edit-endpoint",
+            "name": "Edit: Setup edit endpoint",
+            "description": null
+        },
+        {
+            "id": "edit-use-form-html-twig",
+            "name": "Edit: Use _form.html.twig",
+            "description": null
+        },
+        {
+            "id": "edit-use-shared-layout",
+            "name": "Edit: use shared layout",
+            "description": null
+        },
+        {
+            "id": "user-create-empty-user-userinterface-class",
+            "name": "User: Create empty User-UserInterface class",
+            "description": null
+        },
+        {
+            "id": "user-filling-in-basic-user-methods",
+            "name": "User: Filling in basic User methods",
+            "description": null
+        },
+        {
+            "id": "user-make-an-entity",
+            "name": "User: Make an entity",
+            "description": null
+        },
+        {
+            "id": "login-start-loginform",
+            "name": "Login: Start LoginForm",
+            "description": null
+        },
+        {
+            "id": "login-form-start-controller",
+            "name": "Login Form: Start controller",
+            "description": null
+        },
+        {
+            "id": "login-form-copy-from-docs",
+            "name": "Login Form: Copy from docs",
+            "description": null
+        },
+        {
+            "id": "login-form-basic-controller-template",
+            "name": "Login Form: Basic controller\/template",
+            "description": null
+        },
+        {
+            "id": "login-form-blank-authenticator",
+            "name": "Login Form: Blank authenticator",
+            "description": null
+        },
+        {
+            "id": "login-form-getcredentials-authenticator",
+            "name": "Login Form: getCredentials Authenticator",
+            "description": null
+        },
+        {
+            "id": "login-form-getuser-authenticator",
+            "name": "Login Form: getUser Authenticator",
+            "description": null
+        },
+        {
+            "id": "login-form-checkcredentials-authenticator",
+            "name": "Login Form: checkCredentials authenticator",
+            "description": null
+        },
+        {
+            "id": "login-form-finish-authenticator",
+            "name": "Login Form: Finish authenticator",
+            "description": null
+        },
+        {
+            "id": "userprovider-show-with-intercept-redirects",
+            "name": "UserProvider: Show with intercept_redirects",
+            "description": null
+        },
+        {
+            "id": "user-provider-configure-entity",
+            "name": "User Provider: configure entity",
+            "description": null
+        },
+        {
+            "id": "guard-set-last-username",
+            "name": "Guard: Set last username",
+            "description": null
+        },
+        {
+            "id": "logout-add-logout",
+            "name": "Logout: Add logout",
+            "description": null
+        },
+        {
+            "id": "password-add-password-field",
+            "name": "Password: Add password field",
+            "description": null
+        },
+        {
+            "id": "password-adding-plainpassword",
+            "name": "Password: Adding plainPassword",
+            "description": null
+        },
+        {
+            "id": "password-force-dirty-mark",
+            "name": "Password: force dirty mark",
+            "description": null
+        },
+        {
+            "id": "password-erasecredentials",
+            "name": "Password: eraseCredentials",
+            "description": null
+        },
+        {
+            "id": "password-start-doctrine-listener",
+            "name": "Password: Start Doctrine listener",
+            "description": null
+        },
+        {
+            "id": "password-complete-prepersist",
+            "name": "Password: Complete prePersist",
+            "description": null
+        },
+        {
+            "id": "password-adding-preupdate",
+            "name": "Password: Adding preUpdate",
+            "description": null
+        },
+        {
+            "id": "password-register-listener",
+            "name": "Password: Register listener",
+            "description": null
+        },
+        {
+            "id": "password-encoders-in-security-yml",
+            "name": "Password: encoders in security.yml",
+            "description": null
+        },
+        {
+            "id": "password-checking-in-authenticator",
+            "name": "Password: Checking in authenticator",
+            "description": null
+        },
+        {
+            "id": "authorization-simple-access-control",
+            "name": "Authorization: simple access_control",
+            "description": null
+        },
+        {
+            "id": "authorization-see-access-denied",
+            "name": "Authorization: see access denied",
+            "description": null
+        },
+        {
+            "id": "authorization-long-check-in-controller",
+            "name": "Authorization: Long check in controller",
+            "description": null
+        },
+        {
+            "id": "authorization-denyaccessunlessgranted",
+            "name": "Authorization: denyAccessUnlessGranted",
+            "description": null
+        },
+        {
+            "id": "authorization-with-security",
+            "name": "Authorization: With @Security",
+            "description": null
+        },
+        {
+            "id": "authorization-security-on-class",
+            "name": "Authorization: @Security on class",
+            "description": null
+        },
+        {
+            "id": "roles-dynamic-roles-property",
+            "name": "Roles: Dynamic roles property",
+            "description": null
+        },
+        {
+            "id": "user-fetch-user-in-controller",
+            "name": "User: Fetch user in controller",
+            "description": null
+        },
+        {
+            "id": "user-fetch-in-template",
+            "name": "User: Fetch in template",
+            "description": null
+        },
+        {
+            "id": "role-hierarchy-basic-setup",
+            "name": "Role Hierarchy: Basic setup",
+            "description": null
+        },
+        {
+            "id": "switch-user-do-it",
+            "name": "Switch User: do it!",
+            "description": null
+        },
+        {
+            "id": "registration-start-controller",
+            "name": "Registration: Start controller",
+            "description": null
+        },
+        {
+            "id": "registration-start-form",
+            "name": "Registration: Start form",
+            "description": null
+        },
+        {
+            "id": "registration-finish-rendering",
+            "name": "Registration: Finish rendering",
+            "description": null
+        },
+        {
+            "id": "registration-customize-password-labels",
+            "name": "Registration: Customize password labels",
+            "description": null
+        },
+        {
+            "id": "registration-save-user",
+            "name": "Registration: Save user",
+            "description": null
+        },
+        {
+            "id": "registration-basic-validation",
+            "name": "Registration: Basic validation",
+            "description": null
+        },
+        {
+            "id": "registration-uniqueentity",
+            "name": "Registration: UniqueEntity",
+            "description": null
+        },
+        {
+            "id": "registration-validation-groups",
+            "name": "Registration: validation groups",
+            "description": null
+        },
+        {
+            "id": "registration-auto-login",
+            "name": "Registration: Auto-login",
+            "description": null
+        },
+        {
+            "id": "form-rendering-form",
+            "name": "Form Rendering: form()",
+            "description": null
+        },
+        {
+            "id": "form-rendering-form-widget",
+            "name": "Form Rendering: form_widget",
+            "description": null
+        },
+        {
+            "id": "form-rendering-back-to-form-row",
+            "name": "Form Rendering: Back to form_row()",
+            "description": null
+        },
+        {
+            "id": "form-rendering-use-3-functions",
+            "name": "Form Rendering: Use 3 functions",
+            "description": null
+        },
+        {
+            "id": "form-rendering-back-again-to-form-row",
+            "name": "Form Rendering: Back again to form_row()",
+            "description": null
+        },
+        {
+            "id": "form-vars-override-label",
+            "name": "Form Vars: Override label",
+            "description": null
+        },
+        {
+            "id": "form-vars-override-attr",
+            "name": "Form Vars: Override attr",
+            "description": null
+        },
+        {
+            "id": "form-vars-set-disabled-variable",
+            "name": "Form Vars: Set disabled variable",
+            "description": null
+        },
+        {
+            "id": "form-vars-override-placeholder-var",
+            "name": "Form Vars: Override placeholder var",
+            "description": null
+        },
+        {
+            "id": "form-vars-dump-vars",
+            "name": "Form Vars: dump vars",
+            "description": null
+        },
+        {
+            "id": "form-theme-override-form-row",
+            "name": "Form Theme: Override form_row",
+            "description": null
+        },
+        {
+            "id": "form-theme-dump-vars",
+            "name": "Form Theme: dump() vars",
+            "description": null
+        },
+        {
+            "id": "form-theme-set-error-icon",
+            "name": "Form Theme: set error icon",
+            "description": null
+        },
+        {
+            "id": "form-theme-override-form-widget-simple",
+            "name": "Form Theme: override form_widget_simple",
+            "description": null
+        },
+        {
+            "id": "form-theme-use-bootstrap3-as-parent",
+            "name": "Form Theme: use bootstrap3 as parent",
+            "description": null
+        },
+        {
+            "id": "form-theme-remove-duplicated-parent-logic",
+            "name": "Form Theme: Remove duplicated parent logic",
+            "description": null
+        },
+        {
+            "id": "form-theme-properly-show-error-icon",
+            "name": "Form Theme: Properly show error icon",
+            "description": null
+        },
+        {
+            "id": "form-help-passing-and-dumping-help-var",
+            "name": "Form Help: Passing and dumping help var",
+            "description": null
+        },
+        {
+            "id": "form-help-printing-help-var",
+            "name": "Form Help: Printing help var",
+            "description": null
+        },
+        {
+            "id": "form-help-default-help-var",
+            "name": "Form Help: Default help var",
+            "description": null
+        },
+        {
+            "id": "form-help-set-area-describedby-attr",
+            "name": "Form Help: Set area-describedby attr",
+            "description": null
+        },
+        {
+            "id": "form-help-pass-in-attr-manually",
+            "name": "Form Help: Pass in attr manually",
+            "description": null
+        },
+        {
+            "id": "vars-in-type-using-finishview",
+            "name": "Vars in Type: Using finishView",
+            "description": null
+        },
+        {
+            "id": "vars-in-type-bootstrap-helpformextension",
+            "name": "Vars in Type: Bootstrap HelpFormExtension",
+            "description": null
+        },
+        {
+            "id": "vars-in-type-configure-helpformextension",
+            "name": "Vars in Type: Configure HelpFormExtension",
+            "description": null
+        },
+        {
+            "id": "vars-in-type-add-help-option-conver-to-var",
+            "name": "Vars in Type: Add help option, conver to var",
+            "description": null
+        },
+        {
+            "id": "compound-firstdiscoveredat-as-3-choices",
+            "name": "Compound: firstDiscoveredAt as 3 choices",
+            "description": null
+        },
+        {
+            "id": "vars-in-tpl-render-year-by-hand",
+            "name": "Vars in tpl: Render year by hand",
+            "description": null
+        },
+        {
+            "id": "vars-in-tpl-mark-field-as-rendered",
+            "name": "Vars in tpl: Mark field as rendered",
+            "description": null
+        },
+        {
+            "id": "cleanup-going-back-to-nice-date-field",
+            "name": "Cleanup: Going back to nice date field",
+            "description": null
+        },
+        {
+            "id": "collection-updates-upgrade-symfony",
+            "name": "Collection Updates: Upgrade Symfony",
+            "description": null
+        },
+        {
+            "id": "collection-updates-add-more-user-fields",
+            "name": "Collection Updates: Add more User Fields",
+            "description": null
+        },
+        {
+            "id": "collection-updates-add-user-show-page",
+            "name": "Collection Updates: Add user show page",
+            "description": null
+        },
+        {
+            "id": "collection-updates-fix-new-genus-play-code",
+            "name": "Collection Updates: Fix new genus play code",
+            "description": null
+        },
+        {
+            "id": "collection-updates-redirect-to-edit-on-save",
+            "name": "Collection Updates: Redirect to edit on save",
+            "description": null
+        },
+        {
+            "id": "sluggable-add-slug-field",
+            "name": "Sluggable: Add slug field",
+            "description": null
+        },
+        {
+            "id": "sluggable-add-stofdoctrineextensions-sluggable",
+            "name": "Sluggable: Add StofDoctrineExtensions+Sluggable",
+            "description": null
+        },
+        {
+            "id": "sluggable-update-routes",
+            "name": "Sluggable: Update routes",
+            "description": null
+        },
+        {
+            "id": "manytomany-create-from-genus-to-user",
+            "name": "ManyToMany: Create from Genus to User",
+            "description": null
+        },
+        {
+            "id": "manytomany-add-jointable",
+            "name": "ManyToMany: Add JoinTable",
+            "description": null
+        },
+        {
+            "id": "manytomany-manually-add-user-to-relation",
+            "name": "ManyToMany: Manually add User to relation",
+            "description": null
+        },
+        {
+            "id": "manytomany-prevent-duplicates",
+            "name": "ManyToMany: Prevent duplicates",
+            "description": null
+        },
+        {
+            "id": "manytomany-use-collection-to-print",
+            "name": "ManyToMany: Use collection to print",
+            "description": null
+        },
+        {
+            "id": "manytomany-add-phpdoc-on-getter",
+            "name": "ManyToMany: Add phpdoc on getter",
+            "description": null
+        },
+        {
+            "id": "manytomany-setup-inverse-side",
+            "name": "ManyToMany: Setup inverse side",
+            "description": null
+        },
+        {
+            "id": "manytomany-using-orderby",
+            "name": "ManyToMany: Using OrderBy",
+            "description": null
+        },
+        {
+            "id": "remove-add-link-to-remove-user-from-genus",
+            "name": "Remove: Add link to remove User from Genus",
+            "description": null
+        },
+        {
+            "id": "remove-execute-removal",
+            "name": "Remove: Execute removal",
+            "description": null
+        },
+        {
+            "id": "fixtures-setup-collection-in-fixtures",
+            "name": "Fixtures: Setup collection in fixtures",
+            "description": null
+        },
+        {
+            "id": "fixtures-random-references",
+            "name": "Fixtures: Random references",
+            "description": null
+        },
+        {
+            "id": "counting-print-scientsts-count",
+            "name": "Counting: Print scientsts count",
+            "description": null
+        },
+        {
+            "id": "counting-using-extra-lazy",
+            "name": "Counting: Using EXTRA_LAZY",
+            "description": null
+        },
+        {
+            "id": "counting-join-over-relation",
+            "name": "Counting: Join over relation",
+            "description": null
+        },
+        {
+            "id": "entitytype-add-scientistusers-field",
+            "name": "EntityType: Add scientistUsers field",
+            "description": null
+        },
+        {
+            "id": "entitytype-add-choice-label",
+            "name": "EntityType: Add choice_label",
+            "description": null
+        },
+        {
+            "id": "entitytype-filtering-query-to-scientists",
+            "name": "EntityType: Filtering query to scientists",
+            "description": null
+        },
+        {
+            "id": "inverse-form-adding-genusesstudied-to-user-form",
+            "name": "Inverse Form: Adding genusesStudied to User form",
+            "description": null
+        },
+        {
+            "id": "inverse-form-use-by-reference",
+            "name": "Inverse Form: Use by_reference",
+            "description": null
+        },
+        {
+            "id": "inverse-form-set-owning-side",
+            "name": "Inverse Form: Set owning side",
+            "description": null
+        },
+        {
+            "id": "inverse-form-sync-inverse-side",
+            "name": "Inverse Form: Sync inverse side",
+            "description": null
+        },
+        {
+            "id": "inverse-form-fixing-infinite-loop",
+            "name": "Inverse Form: Fixing infinite loop",
+            "description": null
+        },
+        {
+            "id": "join-entity-add-genusscientist",
+            "name": "Join Entity: Add GenusScientist",
+            "description": null
+        },
+        {
+            "id": "join-entity-update-inverse-relations",
+            "name": "Join Entity: Update inverse relations",
+            "description": null
+        },
+        {
+            "id": "join-entity-generate-migration",
+            "name": "Join Entity: Generate Migration",
+            "description": null
+        },
+        {
+            "id": "join-entity-fix-migration",
+            "name": "Join Entity: Fix migration",
+            "description": null
+        },
+        {
+            "id": "join-entity-unique-index",
+            "name": "Join Entity: Unique index",
+            "description": null
+        },
+        {
+            "id": "join-entity-fixing-show-pages",
+            "name": "Join Entity: Fixing show pages",
+            "description": null
+        },
+        {
+            "id": "join-entity-fix-remove-genusscientist",
+            "name": "Join Entity: Fix remove genusScientist",
+            "description": null
+        },
+        {
+            "id": "join-entity-update-fixtures",
+            "name": "Join Entity: Update Fixtures",
+            "description": null
+        },
+        {
+            "id": "form-collection-simple-embedded-genusscientistform",
+            "name": "Form Collection: Simple embedded GenusScientistForm",
+            "description": null
+        },
+        {
+            "id": "form-collection-render-a-little-better",
+            "name": "Form Collection: Render a little better",
+            "description": null
+        },
+        {
+            "id": "form-collection-render-fields-invidually",
+            "name": "Form Collection: Render fields invidually",
+            "description": null
+        },
+        {
+            "id": "form-collection-adding-remove-logic",
+            "name": "Form Collection: Adding remove logic",
+            "description": null
+        },
+        {
+            "id": "form-collection-allow-delete",
+            "name": "Form Collection: allow_delete",
+            "description": null
+        },
+        {
+            "id": "form-collection-by-reference-remover",
+            "name": "Form Collection: by_reference & remover",
+            "description": null
+        },
+        {
+            "id": "form-collection-orphanremoval",
+            "name": "Form Collection: orphanRemoval",
+            "description": null
+        },
+        {
+            "id": "form-adding-basic-adding-setup",
+            "name": "Form Adding: Basic adding setup",
+            "description": null
+        },
+        {
+            "id": "form-adding-cascade-persist-partial-adder",
+            "name": "Form Adding: cascade=persist & partial adder",
+            "description": null
+        },
+        {
+            "id": "form-adding-adder-set-owning-side",
+            "name": "Form Adding: adder set owning side",
+            "description": null
+        },
+        {
+            "id": "form-adding-cleanup-user-class-form",
+            "name": "Form Adding: Cleanup User class+form",
+            "description": null
+        },
+        {
+            "id": "validation-adding-notblank-to-yearsstudied",
+            "name": "Validation: Adding NotBlank to yearsStudied",
+            "description": null
+        },
+        {
+            "id": "validation-uniqueentity-on-genus-user",
+            "name": "Validation: UniqueEntity on Genus+User",
+            "description": null
+        },
+        {
+            "id": "validation-setting-errorpath",
+            "name": "Validation: Setting errorPath",
+            "description": null
+        },
+        {
+            "id": "validation-fixing-collection-index-issue",
+            "name": "Validation: Fixing collection index issue",
+            "description": null
+        },
+        {
+            "id": "form-customizing-prototype",
+            "name": "Form: Customizing prototype",
+            "description": null
+        },
+        {
+            "id": "cleanup-organize-into-js-file",
+            "name": "Cleanup: Organize into .js file",
+            "description": null
+        },
+        {
+            "id": "cleanup-prevent-extra-collection-label",
+            "name": "Cleanup: Prevent extra collection label",
+            "description": null
+        },
+        {
+            "id": "form-event-readonly-user-on-edit",
+            "name": "Form Event: Readonly user on edit",
+            "description": null
+        },
+        {
+            "id": "criteria-fix-genusscientist-yearsstudied-type",
+            "name": "Criteria: Fix GenusScientist.yearsStudied type",
+            "description": null
+        },
+        {
+            "id": "criteria-remove-leftjoin",
+            "name": "Criteria: Remove leftJoin",
+            "description": null
+        },
+        {
+            "id": "criteria-use-inefficient-filter",
+            "name": "Criteria: Use inefficient filter",
+            "description": null
+        },
+        {
+            "id": "criteria-refactoring-to-criteria",
+            "name": "Criteria: Refactoring to Criteria",
+            "description": null
+        },
+        {
+            "id": "criteria-refactor-to-repository",
+            "name": "Criteria: Refactor to repository",
+            "description": null
+        },
+        {
+            "id": "criteria-use-in-query-builder",
+            "name": "Criteria: Use in query builder",
+            "description": null
+        },
+        {
+            "id": "upgrade-add-class-with-multiple-services",
+            "name": "Upgrade: Add class with multiple services",
+            "description": null
+        },
+        {
+            "id": "upgrade-upgrade-to-symfony-3-3",
+            "name": "Upgrade: Upgrade to Symfony 3.3",
+            "description": null
+        },
+        {
+            "id": "upgrade-removing-trusted-proxies",
+            "name": "Upgrade: Removing trusted_proxies",
+            "description": null
+        },
+        {
+            "id": "upgrade-enable-webserverbundle",
+            "name": "Upgrade: Enable WebServerBundle",
+            "description": null
+        },
+        {
+            "id": "di-changes-add-defaults",
+            "name": "DI Changes: Add _defaults",
+            "description": null
+        },
+        {
+            "id": "di-changes-use-class-as-service-ids",
+            "name": "DI Changes: Use class as service ids",
+            "description": null
+        },
+        {
+            "id": "di-changes-make-services-private",
+            "name": "DI Changes: Make services private",
+            "description": null
+        },
+        {
+            "id": "di-changes-register-src-appbundle-services",
+            "name": "DI Changes: Register src\/AppBundle services",
+            "description": null
+        },
+        {
+            "id": "di-cleanup-remove-blank-services",
+            "name": "DI Cleanup: Remove blank services",
+            "description": null
+        },
+        {
+            "id": "di-multi-instance-remove-auto-reg-ed-service",
+            "name": "DI Multi Instance: Remove auto-reg'ed service",
+            "description": null
+        },
+        {
+            "id": "di-multi-instance-alias-to-one-service",
+            "name": "DI Multi Instance: alias to one service",
+            "description": null
+        },
+        {
+            "id": "di-multi-instance-refactor-to-single-service",
+            "name": "DI Multi Instance: Refactor to single service",
+            "description": null
+        },
+        {
+            "id": "di-cleanup-try-to-fetch-private-id",
+            "name": "DI Cleanup: Try to fetch private id",
+            "description": null
+        },
+        {
+            "id": "di-cleanup-action-di-the-service",
+            "name": "DI Cleanup: Action DI the service",
+            "description": null
+        },
+        {
+            "id": "di-cleanup-removing-legacy-aliases",
+            "name": "DI Cleanup: Removing legacy aliases",
+            "description": null
+        },
+        {
+            "id": "di-cleanup-short-tags-syntax",
+            "name": "DI Cleanup: Short tags syntax",
+            "description": null
+        },
+        {
+            "id": "di-aliases-remove-argument",
+            "name": "DI Aliases: Remove argument",
+            "description": null
+        },
+        {
+            "id": "di-aliases-add-markdownparserinterface",
+            "name": "DI Aliases: Add MarkdownParserInterface",
+            "description": null
+        },
+        {
+            "id": "di-aliases-fix-wrong-types-deprecations",
+            "name": "DI Aliases: Fix wrong types deprecations",
+            "description": null
+        },
+        {
+            "id": "di-args-use-named-argument",
+            "name": "DI Args: Use named argument",
+            "description": null
+        },
+        {
+            "id": "di-args-change-arg-name",
+            "name": "DI Args: Change arg name",
+            "description": null
+        },
+        {
+            "id": "using-di-add-event-subscriber",
+            "name": "Using DI: Add event subscriber",
+            "description": null
+        },
+        {
+            "id": "using-di-injecting-loggerinterface",
+            "name": "Using DI: Injecting LoggerInterface",
+            "description": null
+        },
+        {
+            "id": "using-di-injecting-messagemanager",
+            "name": "Using DI: Injecting MessageManager",
+            "description": null
+        },
+        {
+            "id": "using-di-adding-non-wireable-arg",
+            "name": "Using DI: Adding non-wireable arg",
+            "description": null
+        }
+    ],
+    "sha": "ae26ba09c0c73f3774bbebee1017c3a8d7f7a228"
+}

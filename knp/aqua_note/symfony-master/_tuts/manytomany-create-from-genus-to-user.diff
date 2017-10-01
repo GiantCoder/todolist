@@ -1,0 +1,20 @@
+diff --git a/src/AppBundle/Entity/Genus.php b/src/AppBundle/Entity/Genus.php
+index 0f42d6c..886a445 100644
+--- a/src/AppBundle/Entity/Genus.php
++++ b/src/AppBundle/Entity/Genus.php
+@@ -69,9 +69,15 @@ class Genus
+      */
+     private $notes;
+ 
++    /**
++     * @ORM\ManyToMany(targetEntity="User")
++     */
++    private $genusScientists;
++
+     public function __construct()
+     {
+         $this->notes = new ArrayCollection();
++        $this->genusScientists = new ArrayCollection();
+     }
+ 
+     public function getId()

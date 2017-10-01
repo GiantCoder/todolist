@@ -1,0 +1,14 @@
+diff --git a/app/config/services.yml b/app/config/services.yml
+index 7608383..84cef3b 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -29,7 +29,8 @@ services:
+     Doctrine\ORM\EntityManager: '@doctrine.orm.default_entity_manager'
+ 
+     AppBundle\Service\MarkdownTransformer:
+-        arguments: ['', '@doctrine_cache.providers.my_markdown_cache']
++        arguments:
++            $cache: '@doctrine_cache.providers.my_markdown_cache'
+ 
+     AppBundle\Doctrine\HashPasswordListener:
+         tags: [doctrine.event_subscriber]

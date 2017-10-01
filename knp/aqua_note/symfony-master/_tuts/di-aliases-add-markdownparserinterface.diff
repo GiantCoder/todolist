@@ -1,0 +1,14 @@
+diff --git a/app/config/services.yml b/app/config/services.yml
+index f33c2ca..737b5e3 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -24,6 +24,9 @@ services:
+         public: true
+         tags: ['controller.service_arguments']
+ 
++    # alias to allow this type to be autowired
++    Knp\Bundle\MarkdownBundle\MarkdownParserInterface: '@markdown.parser'
++
+     AppBundle\Service\MarkdownTransformer:
+         arguments: ['', '@doctrine_cache.providers.my_markdown_cache']
+ 

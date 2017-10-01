@@ -1,0 +1,34 @@
+{%  extends  'base.html.twig' %}
+
+{%  block body %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Genus</th>
+                <th># of species</th>
+                <th>Fun Fact</th>
+                <th>Published?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for genus in genuses %}
+                <tr>
+                    <td>
+                    <a href="{{ path('genus_show', {
+                        'genusName': genus.name
+                    }) }}">{{ genus.name }}</a></td>
+                    <td>{{  genus.speciesCount }}</td>
+                    <td>{{  genus.funFact }}</td>
+                    <td>{% if genus.isPublished %}<span class="fa fa-check fa-1x"></span>{%  endif %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{%  endblock %}
+
+{% block stylesheets %}
+    {{  parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}

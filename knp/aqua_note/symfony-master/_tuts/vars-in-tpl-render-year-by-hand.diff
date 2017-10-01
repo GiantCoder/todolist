@@ -1,0 +1,91 @@
+diff --git a/app/Resources/views/admin/genus/_form.html.twig b/app/Resources/views/admin/genus/_form.html.twig
+index f52ff75..da01a0c 100644
+--- a/app/Resources/views/admin/genus/_form.html.twig
++++ b/app/Resources/views/admin/genus/_form.html.twig
+@@ -18,7 +18,15 @@
+         help: 'Should this genus be shown on the site?'
+     }) }}
+ 
+-    {{ form_row(genusForm.firstDiscoveredAt.year) }}
++    {{ form_label(genusForm.firstDiscoveredAt.year) }}
++    <select id="{{ genusForm.firstDiscoveredAt.year.vars.id }}"
++            name="{{ genusForm.firstDiscoveredAt.year.vars.full_name }}">
++        {% for choice in genusForm.firstDiscoveredAt.year.vars.choices %}
++            <option value="{{ choice.value }}" {{ choice.value == genusForm.firstDiscoveredAt.year.vars.data ? 'selected' : '' }}>{{ choice.label }}</option>
++        {% endfor %}
++    </select>
++    {{ form_errors(genusForm.firstDiscoveredAt.year) }}
++
+     {{ form_row(genusForm.firstDiscoveredAt.month) }}
+     {{ form_row(genusForm.firstDiscoveredAt.day) }}
+ 
+diff --git a/vendor/symfony/symfony/src/Symfony/Component/Form/ChoiceList/View/ChoiceView.php b/vendor/symfony/symfony/src/Symfony/Component/Form/ChoiceList/View/ChoiceView.php
+new file mode 100644
+index 0000000..6009597
+--- /dev/null
++++ b/vendor/symfony/symfony/src/Symfony/Component/Form/ChoiceList/View/ChoiceView.php
+@@ -0,0 +1,64 @@
++<?php
++
++/*
++ * This file is part of the Symfony package.
++ *
++ * (c) Fabien Potencier <fabien@symfony.com>
++ *
++ * For the full copyright and license information, please view the LICENSE
++ * file that was distributed with this source code.
++ */
++
++namespace Symfony\Component\Form\ChoiceList\View;
++
++/**
++ * Represents a choice in templates.
++ *
++ * @author Bernhard Schussek <bschussek@gmail.com>
++ */
++class ChoiceView
++{
++    /**
++     * The label displayed to humans.
++     *
++     * @var string
++     */
++    public $label;
++
++    /**
++     * The view representation of the choice.
++     *
++     * @var string
++     */
++    public $value;
++
++    /**
++     * The original choice value.
++     *
++     * @var mixed
++     */
++    public $data;
++
++    /**
++     * Additional attributes for the HTML tag.
++     *
++     * @var array
++     */
++    public $attr;
++
++    /**
++     * Creates a new choice view.
++     *
++     * @param mixed  $data  The original choice
++     * @param string $value The view representation of the choice
++     * @param string $label The label displayed to humans
++     * @param array  $attr  Additional attributes for the HTML tag
++     */
++    public function __construct($data, $value, $label, array $attr = array())
++    {
++        $this->data = $data;
++        $this->value = $value;
++        $this->label = $label;
++        $this->attr = $attr;
++    }
++}

@@ -1,0 +1,14 @@
+diff --git a/app/config/services.yml b/app/config/services.yml
+index 32444e6..aa6713f 100644
+--- a/app/config/services.yml
++++ b/app/config/services.yml
+@@ -28,8 +28,7 @@ services:
+         arguments: ['@markdown.parser', '@doctrine_cache.providers.my_markdown_cache']
+ 
+     AppBundle\Doctrine\HashPasswordListener:
+-        tags:
+-            - { name: doctrine.event_subscriber }
++        tags: [doctrine.event_subscriber]
+ 
+     AppBundle\Form\TypeExtension\HelpFormExtension:
+         tags:

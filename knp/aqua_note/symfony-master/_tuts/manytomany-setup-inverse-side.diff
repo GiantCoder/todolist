@@ -1,0 +1,82 @@
+diff --git a/app/Resources/views/user/show.html.twig b/app/Resources/views/user/show.html.twig
+index 5a0984f..21382a1 100644
+--- a/app/Resources/views/user/show.html.twig
++++ b/app/Resources/views/user/show.html.twig
+@@ -35,6 +35,21 @@
+                     </tbody>
+                 </table>
+             </div>
++
++            <div class="col-xs-4">
++                <h3>Genus Studied</h3>
++                <ul class="list-group">
++                    {% for genusStudied in user.studiedGenuses %}
++                        <li class="list-group-item">
++                            <a href="{{ path('genus_show', {
++                                'slug': genusStudied.slug
++                            }) }}">
++                                {{ genusStudied.name }}
++                            </a>
++                        </li>
++                    {% endfor %}
++                </ul>
++            </div>
+         </div>
+     </div>
+ {% endblock %}
+diff --git a/src/AppBundle/Entity/Genus.php b/src/AppBundle/Entity/Genus.php
+index efb13d5..4155d05 100644
+--- a/src/AppBundle/Entity/Genus.php
++++ b/src/AppBundle/Entity/Genus.php
+@@ -70,7 +70,7 @@ class Genus
+     private $notes;
+ 
+     /**
+-     * @ORM\ManyToMany(targetEntity="User")
++     * @ORM\ManyToMany(targetEntity="User", inversedBy="studiedGenuses")
+      * @ORM\JoinTable(name="genus_scientist")
+      */
+     private $genusScientists;
+diff --git a/src/AppBundle/Entity/User.php b/src/AppBundle/Entity/User.php
+index 54f2ade..a40e075 100644
+--- a/src/AppBundle/Entity/User.php
++++ b/src/AppBundle/Entity/User.php
+@@ -2,6 +2,7 @@
+ 
+ namespace AppBundle\Entity;
+ 
++use Doctrine\Common\Collections\ArrayCollection;
+ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+ use Symfony\Component\Security\Core\Role\Role;
+ use Symfony\Component\Security\Core\User\UserInterface;
+@@ -74,6 +75,17 @@ class User implements UserInterface
+      */
+     private $universityName;
+ 
++    /**
++     * @ORM\ManyToMany(targetEntity="Genus", mappedBy="genusScientists")
++     */
++    private $studiedGenuses;
++
++    public function __construct()
++    {
++        $this->studiedGenuses = new ArrayCollection();
++    }
++
++
+     public function getId()
+     {
+         return $this->id;
+@@ -199,4 +211,12 @@ class User implements UserInterface
+     {
+         return trim($this->getFirstName().' '.$this->getLastName());
+     }
++
++    /**
++     * @return ArrayCollection|Genus[]
++     */
++    public function getStudiedGenuses()
++    {
++        return $this->studiedGenuses;
++    }
+ }
