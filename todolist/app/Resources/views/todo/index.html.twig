@@ -1,13 +1,14 @@
 {%  extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Index</h1>
+<h2 class="page-header">Todo List</h2>
     
     <table class="table table-striped">
         <thead>
             <th>#</th>
             <th>Todo</th>
             <th>Due Date</th>
+            <th>Description</th>
             <th></th>
         </thead>
         <tbody>
@@ -16,19 +17,13 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><a class="btn btn-default" href="{{ path('todo_details', { 'id': 1 }) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        </tr>
-        <tr>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>
+                <a class="btn btn-default" href="{{ path('todo_details', { 'id': 1 }) }}"><span class="glyphicon glyphicon-search"></span></a>
+                <a class="btn btn-default" href="{{ path('todo_edit', { 'id': 1 }) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                <a class="btn btn-success" href="{{ "#" }}"><span class="glyphicon glyphicon-user"></span></a>
+                <a class="btn btn-danger" href="{{ path('todo_delete', { 'id': 1 }) }}"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
         </tr>
         </tbody>
     </table>

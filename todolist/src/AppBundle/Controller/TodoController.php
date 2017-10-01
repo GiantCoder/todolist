@@ -44,4 +44,13 @@ class TodoController extends Controller
         return $this->render('todo/details.html.twig');
     }
 
+    /**
+     * @Route("/todo/delete/{id}", name="todo_delete")
+     */
+    public function deleteAction($id)
+    {
+        return $this->render('Task deleted');
+    }
+
+
 }
