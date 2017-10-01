@@ -14,15 +14,15 @@
       <file leaf-file-name="TodoController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+            <state relative-caret-position="120">
+              <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
               <folding>
-                <element signature="e#40#99#0#PHP" expanded="true" />
-                <element signature="e#429#445#1#PHP" expanded="true" />
-                <element signature="e#502#524#0#PHP" expanded="true" />
-                <element signature="e#730#753#1#PHP" expanded="true" />
-                <element signature="e#919#940#1#PHP" expanded="true" />
-                <element signature="e#1097#1121#1#PHP" expanded="true" />
+                <element signature="e#40#66#0#PHP" expanded="true" />
+                <element signature="e#501#517#1#PHP" expanded="true" />
+                <element signature="e#574#596#0#PHP" expanded="true" />
+                <element signature="e#1389#1412#1#PHP" expanded="true" />
+                <element signature="e#1578#1599#1#PHP" expanded="true" />
+                <element signature="e#1756#1780#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,12 +228,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506870459521</updated>
-      <workItem from="1506870461816" duration="5382000" />
+      <workItem from="1506870461816" duration="5755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5382000" />
+    <option name="totallyTimeSpent" value="5755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -423,15 +423,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TodoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
           <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#429#445#1#PHP" expanded="true" />
-            <element signature="e#502#524#0#PHP" expanded="true" />
-            <element signature="e#730#753#1#PHP" expanded="true" />
-            <element signature="e#919#940#1#PHP" expanded="true" />
-            <element signature="e#1097#1121#1#PHP" expanded="true" />
+            <element signature="e#40#66#0#PHP" expanded="true" />
+            <element signature="e#501#517#1#PHP" expanded="true" />
+            <element signature="e#574#596#0#PHP" expanded="true" />
+            <element signature="e#1389#1412#1#PHP" expanded="true" />
+            <element signature="e#1578#1599#1#PHP" expanded="true" />
+            <element signature="e#1756#1780#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

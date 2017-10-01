@@ -2,11 +2,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Todo;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
-
+use Symfony\Component\HttpFoundation\Response;
 
 class TodoController extends Controller
 {
@@ -24,6 +24,28 @@ class TodoController extends Controller
             'todos' => $todos
         ]);
 
+    }
+
+    /**
+     * @Route("/todo/new", name="todo_new")
+     */
+    public function newAction()
+    {
+        $now = new \DateTime();
+
+        $todo = new Todo();
+        $todo->setName('Task'.rand(1,100));
+        $todo->setCategory('Work');
+        $todo->setDueDate(new \DateTime());
+        $todo->setCreateDate($now);
+        $todo->setDescription('Lorem ipsum etc');
+        $todo->setPriority('High');
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($todo);
+        $em->flush();
+
+        return new Response('<html><body>Todo created!</body></html>');
     }
 
     /**
